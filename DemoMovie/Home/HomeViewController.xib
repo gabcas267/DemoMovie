@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="DemoMovie" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="qIx-VD-wpv" id="LJB-6Z-FWB"/>
+                <outlet property="segmentedControl" destination="vb5-bA-aPa" id="8nU-7C-Zbw"/>
+                <outlet property="tblvMovie" destination="4Bf-u5-uYg" id="4xQ-rN-OqX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-u5-uYg">
+                    <rect key="frame" x="0.0" y="116" width="414" height="780"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="c6e-E0-epN"/>
+                        <outlet property="delegate" destination="-1" id="Q0C-fT-zYq"/>
+                    </connections>
+                </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vb5-bA-aPa">
+                    <rect key="frame" x="30" y="74" width="354" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Wth-I8-nj1"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Popular"/>
+                        <segment title="Top Rated"/>
+                        <segment title="Upcoming"/>
+                    </segments>
+                    <connections>
+                        <action selector="actionSelectMovieState:" destination="-1" eventType="valueChanged" id="NBv-3R-88d"/>
+                    </connections>
+                </segmentedControl>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="qIx-VD-wpv">
+                    <rect key="frame" x="197" y="49" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Hdt-x4-zwz"/>
+                        <constraint firstAttribute="width" constant="20" id="Ttq-IP-qzP"/>
+                    </constraints>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vb5-bA-aPa" secondAttribute="trailing" constant="30" id="2Oi-SW-nBi"/>
+                <constraint firstItem="4Bf-u5-uYg" firstAttribute="top" secondItem="vb5-bA-aPa" secondAttribute="bottom" constant="12" id="9qy-pp-6Em"/>
+                <constraint firstItem="4Bf-u5-uYg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="G4z-0y-iqs"/>
+                <constraint firstItem="vb5-bA-aPa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="IEv-iw-6iS"/>
+                <constraint firstAttribute="bottom" secondItem="4Bf-u5-uYg" secondAttribute="bottom" id="MAe-ig-l4A"/>
+                <constraint firstItem="4Bf-u5-uYg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="YHh-Hi-w1y"/>
+                <constraint firstItem="qIx-VD-wpv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="ZfE-6v-2TI"/>
+                <constraint firstItem="vb5-bA-aPa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="lSm-2b-Uua"/>
+                <constraint firstItem="qIx-VD-wpv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mkN-Cm-XjV"/>
+            </constraints>
+            <point key="canvasLocation" x="-562.31884057971024" y="-9.375"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
